@@ -53,6 +53,19 @@ module.exports = {
       this.scrollTo(to, props);
     }
   },
+  
+  getPreviousLink: function () {
+    var currentIndex = __links.indexOf(__activeLink) || 0;
+    var previousItem = __links[currentIndex - 1];
+    return previousItem;
+  },
+
+  scrollToPrevious: function (props) {
+    var to = this.getPreviousLink();
+    if (to) {
+      this.scrollTo(to, props);
+    }
+  },
 
   scrollTo: function(to, props) {
 
